@@ -1,43 +1,64 @@
 #include "player.h"
-#include <QKeyEvent>
-#include "bullet.h"
-#include <QGraphicsScene>
-#include <QDebug>
-#include "enemy.h"
-Player::Player() {
+#include <QPainter>
+#include <QApplication>
 
+Player::Player(QWidget *parent) : QWidget(parent)
+{
+    playerPixmap.load("/Users/asser/Desktop/CSCE 1101/plane.jpeg"); // Adjust the path according to your project structure
+
+    timer = new QTimer(this);
+    connect(timer, &QTimer::timeout, this, &Player::movePlayer);
+}
+
+void Player::paintEvent(QPaintEvent *event)
+{
+    Q_UNUSED(event);
+
+    QPainter painter(this);
+    painter.drawPixmap(400,600, width(), height(), playerPixmap);
+
+    // Draw bullets
+    painter.setBrush(Qt::red);
+    for (const QPoint &bullet : bullets)
+        painter.drawEllipse(bullet, 5, 5);
 }
 
 void Player::keyPressEvent(QKeyEvent *event)
 {
-        // *******  Event Handling for the Player ********
-    if(event->key()== Qt::Key_Left)
-    {
-        if(x()>0) // to prevent the player from getting out of the screen
-        {
-        setPos(x()-10,y());
-        }
+    if (event->key() == Qt::Key_Left) {
+        dx = -1;
+        timer->start(20);
     }
-    else if(event->key()== Qt::Key_Right)
-
-    { if(x()+100<800) // to prevent the player from getting out of the screen
-        setPos(x()+10,y());
+    else if (event->key() == Qt::Key_Right) {
+        dx = 1;
+        timer->start(20);
     }
-    else if(event->key()== Qt::Key_Space)
-    {
-        Bullet * bullet = new Bullet();
-        bullet->setPos(x()+50,y());
-        bullet->setBrush(Qt::blue);
-        scene()->addItem(bullet);
-
+    else {
+        QWidget::keyPressEvent(event);
     }
-
-
 }
- // CreateEnemy function used to create the eneimes
-void Player::createEnemy()
-{ Enemy* enemy = new Enemy();
-    enemy->setBrush(Qt::red);
-  scene()->addItem(enemy);
 
+void Player::keyReleaseEvent(QKeyEvent *event)
+{
+    if (event->key() == Qt::Key_Left || event->key() == Qt::Key_Right) {
+        dx = 0;
+    }
+    else {
+        QWidget::keyPressEvent(event);
+    }
+
+    if (dx == 0 && dy == 0)
+        timer->stop();
+}
+
+void Player::movePlayer()
+{
+    int newX = x() + dx * 5; // Adjust movement speed as needed
+    int newY = y() + dy * 5;
+
+    if (newX >= 0 && newX + width() <= parentWidget()->width() &&
+        newY >= 0 && newY + height() <= parentWidget()->height())
+    {
+        move(newX, newY);
+    }
 }

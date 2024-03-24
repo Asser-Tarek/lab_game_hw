@@ -1,6 +1,7 @@
 
 #include <QApplication>
 #include <QGraphicsRectItem>
+#include <QPixmap>
 #include <QGraphicsScene>
 #include <QGraphicsView>
 #include "player.h"
@@ -29,8 +30,6 @@ int main(int argc, char *argv[])
     // *******  Create the Player ********
 
     Player * player = new Player ();
-    player->setRect(0,0,100,100);
-    player->setBrush(Qt::yellow);
     scene.addItem(player);
 
 
