@@ -61,5 +61,6 @@ int main(int argc, char *argv[])
     score->setPlainText("Score: " + QString:: number (0)) ;
     score->setPos (700, 10) ; scene. addItem (score) ;
 
+
     return a.exec();
 }

@@ -1,4 +1,11 @@
+#-------------------------------------------------
+#
+# Project created by Moustafa and Asser 3/25/2024
+#
+#-------------------------------------------------
+
 QT       += core gui
+QT       += multimedia
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -25,4 +32,5 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
 
 RESOURCES += \
-    Resource.qrc
+    RES_2.qrc \
+    Resources.qrc

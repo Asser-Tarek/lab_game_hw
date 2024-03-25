@@ -5,10 +5,18 @@
 #include <enemy.h>
 #include <player.h>
 #include <typeinfo>
+#include <QtMultimedia>
+#include <QMediaPLayer>
+#include <QAudioOutput>
 Bullet::Bullet():QObject(), QGraphicsPixmapItem() {
 
     setPixmap(QPixmap(":/images/bullet_qt.png"));
-
+    //****** Creating Chicken Death Sound Effect *********
+    chicken_death_output = new QAudioOutput();
+    chicken_death_output->setVolume(50);
+    chicken_death_sound = new QMediaPlayer();
+    chicken_death_sound->setAudioOutput(chicken_death_output);
+    chicken_death_sound->setSource(QUrl("qrc:/SOUNDS/chicken-single-alarm-call-6056.mp3"));
     // *******  Generating the Bullets automatically ********
     QTimer * timer = new QTimer();
     connect(timer, SIGNAL(timeout()),this,SLOT (move()));
@@ -20,12 +28,14 @@ Bullet::Bullet():QObject(), QGraphicsPixmapItem() {
 void Bullet::move()
 {
     // *******  Getting the colliding items with the Bullet ********
+    // ******* Adding Sound effect for destroyed chicken *******
 
     QList<QGraphicsItem *> colliding_items = collidingItems();
     for(int i = 0, n = colliding_items.size(); i<n;++i)
     {
         if(typeid(*(colliding_items[i])) == typeid(Enemy))
         {
+            chicken_death_sound -> play();
             scene()->removeItem(colliding_items[i]);
             scene()->removeItem(this);
 

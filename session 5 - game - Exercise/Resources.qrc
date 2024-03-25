@@ -1,0 +1,8 @@
+<RCC>
+    <qresource prefix="/images">
+        <file>jet_qt.png</file>
+        <file>bullet_qt.png</file>
+        <file>enemy_qt.png</file>
+        <file>space_qt.jpg</file>
+    </qresource>
+</RCC>

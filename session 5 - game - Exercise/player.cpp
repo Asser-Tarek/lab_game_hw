@@ -4,9 +4,16 @@
 #include <QGraphicsScene>
 #include <QDebug>
 #include "enemy.h"
+#include <QMediaPLayer>
+#include <QAudioOutput>
+//********* adding blast sound effect after key press event ********
 Player::Player() {
-
-}
+    blast_audio = new QAudioOutput();
+    blast_audio->setVolume(50);
+    blast_sound = new QMediaPlayer();
+    blast_sound->setAudioOutput(blast_audio);
+    blast_sound->setSource(QUrl("qrc:/SOUNDS/BLAST.mpeg"));
+};
 
 void Player::keyPressEvent(QKeyEvent *event)
 {
@@ -24,11 +31,11 @@ void Player::keyPressEvent(QKeyEvent *event)
             setPos(x()+15,y());
     }
     else if(event->key()== Qt::Key_Space)
-    {
+    {      
         Bullet * bullet = new Bullet();
         bullet->setPos(x()+45,y()-20);
         scene()->addItem(bullet);
-
+        blast_sound->play();
     }
 
 

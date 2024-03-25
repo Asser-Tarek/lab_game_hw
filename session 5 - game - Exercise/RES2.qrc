@@ -1,0 +1,6 @@
+<RCC>
+    <qresource prefix="/Sounds">
+        <file>chicken-single-alarm-call-6056.mp3</file>
+        <file>BLAST.mpeg</file>
+    </qresource>
+</RCC>
