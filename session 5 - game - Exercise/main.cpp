@@ -25,7 +25,7 @@ int main(int argc, char *argv[])
 
     QGraphicsScene scene;
     scene.setSceneRect(0,0,800,600);
-    scene.setBackgroundBrush(QBrush(QImage("")));
+    scene.setBackgroundBrush(QBrush(QImage(":/images/space_qt.jpg")));
 
 
     // *******  Create the Player ********

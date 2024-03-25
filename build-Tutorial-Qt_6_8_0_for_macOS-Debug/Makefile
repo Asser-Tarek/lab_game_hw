@@ -1143,7 +1143,8 @@ qrc_Resource.cpp: ../session\ 5\ -\ game\ -\ Exercise/Resource.qrc \
 		../../../../Qt/6.8.0/macos/libexec/rcc \
 		../session\ 5\ -\ game\ -\ Exercise/enemy_qt.png \
 		../session\ 5\ -\ game\ -\ Exercise/bullet_qt.png \
-		../session\ 5\ -\ game\ -\ Exercise/jet_qt.png
+		../session\ 5\ -\ game\ -\ Exercise/jet_qt.png \
+		../session\ 5\ -\ game\ -\ Exercise/space_qt.jpg
 	/Users/asser/Qt/6.8.0/macos/libexec/rcc -name Resource --no-zstd ../session\ 5\ -\ game\ -\ Exercise/Resource.qrc -o qrc_Resource.cpp
 
 compiler_moc_header_make_all: moc_bullet.cpp moc_enemy.cpp moc_player.cpp
@@ -1240,7 +1241,9 @@ main.o: ../session\ 5\ -\ game\ -\ Exercise/main.cpp ../../../../Qt/6.8.0/macos/
 		../../../../Qt/6.8.0/macos/lib/QtCore.framework/Headers/QDebug \
 		../../../../Qt/6.8.0/macos/lib/QtCore.framework/Headers/qdebug.h \
 		../../../../Qt/6.8.0/macos/lib/QtGui.framework/Headers/QBrush \
-		../../../../Qt/6.8.0/macos/lib/QtGui.framework/Headers/qbrush.h
+		../../../../Qt/6.8.0/macos/lib/QtGui.framework/Headers/qbrush.h \
+		../../../../Qt/6.8.0/macos/lib/QtGui.framework/Headers/QImage \
+		../../../../Qt/6.8.0/macos/lib/QtGui.framework/Headers/qimage.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o main.o ../session\ 5\ -\ game\ -\ Exercise/main.cpp
 
 player.o: ../session\ 5\ -\ game\ -\ Exercise/player.cpp ../session\ 5\ -\ game\ -\ Exercise/player.h \
