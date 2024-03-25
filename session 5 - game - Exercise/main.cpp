@@ -7,6 +7,7 @@
 #include <QTimer>
 #include <QDebug>
 #include <QBrush>
+#include <QImage>
 
 int main(int argc, char *argv[])
 {
@@ -24,6 +25,7 @@ int main(int argc, char *argv[])
 
     QGraphicsScene scene;
     scene.setSceneRect(0,0,800,600);
+    scene.setBackgroundBrush(QBrush(QImage("")));
 
 
     // *******  Create the Player ********
