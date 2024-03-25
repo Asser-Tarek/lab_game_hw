@@ -3,6 +3,7 @@
 #include <QGraphicsRectItem>
 #include <QGraphicsScene>
 #include <QGraphicsView>
+#include <QGraphicsTextItem>
 #include "player.h"
 #include <QTimer>
 #include <QDebug>
@@ -36,7 +37,7 @@ int main(int argc, char *argv[])
 
 
 
-    // *******  Setting the foucs to the Player ********
+    // *******  Setting the focus to the Player ********
 
     player->setFlag(QGraphicsItem::ItemIsFocusable);
     player->setFocus();
@@ -53,7 +54,12 @@ int main(int argc, char *argv[])
     QTimer * time = new QTimer();
     QObject::connect(time, SIGNAL(timeout()),player,SLOT(createEnemy()));
     time->start(2000);
-
+    //******** Add score *******
+    QGraphicsTextItem * score = new QGraphicsTextItem;
+    score->setFont (QFont ("times", 16)) ;
+    score->setDefaultTextColor (Qt:: blue) ;
+    score->setPlainText("Score: " + QString:: number (0)) ;
+    score->setPos (700, 10) ; scene. addItem (score) ;
 
     return a.exec();
 }
