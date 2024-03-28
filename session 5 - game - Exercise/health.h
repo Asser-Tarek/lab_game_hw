@@ -8,6 +8,8 @@ public:
     Health();
     void decrease();
     int getHealth();
+    void dead();
+    void gameover();
 private:
     int health;
 };

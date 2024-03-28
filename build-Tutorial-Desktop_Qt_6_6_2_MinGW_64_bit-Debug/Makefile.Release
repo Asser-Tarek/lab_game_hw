@@ -1701,8 +1701,11 @@ release/health.o: ../session\ 5\ -\ game\ -\ Exercise/health.cpp ../session\ 5\ 
 		C:/Qt/6.6.2/mingw_64/include/QtGui/qrgba64.h \
 		C:/Qt/6.6.2/mingw_64/include/QtGui/qimage.h \
 		C:/Qt/6.6.2/mingw_64/include/QtGui/qpixelformat.h \
-		C:/Qt/6.6.2/mingw_64/include/QtGui/QFont \
-		C:/Qt/6.6.2/mingw_64/include/QtGui/qfont.h
+		C:/Qt/6.6.2/mingw_64/include/QtWidgets/qgraphicsscene.h \
+		C:/Qt/6.6.2/mingw_64/include/QtGui/qbrush.h \
+		C:/Qt/6.6.2/mingw_64/include/QtGui/qfont.h \
+		C:/Qt/6.6.2/mingw_64/include/QtGui/qpen.h \
+		C:/Qt/6.6.2/mingw_64/include/QtGui/QFont
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\health.o "..\session 5 - game - Exercise\health.cpp"
 
 release/main.o: ../session\ 5\ -\ game\ -\ Exercise/main.cpp C:/Qt/6.6.2/mingw_64/include/QtWidgets/QApplication \
