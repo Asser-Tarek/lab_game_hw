@@ -5,6 +5,7 @@ release/health.o
 release/main.o
 release/player.o
 release/score.o
+release/qrc_Game_Over_Res.o
 release/qrc_RES_2.o
 release/qrc_RES_3.o
 release/qrc_Resources.o

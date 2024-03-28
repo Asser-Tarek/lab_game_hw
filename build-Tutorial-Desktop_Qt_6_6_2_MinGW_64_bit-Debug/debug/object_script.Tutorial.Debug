@@ -5,6 +5,7 @@ debug/health.o
 debug/main.o
 debug/player.o
 debug/score.o
+debug/qrc_Game_Over_Res.o
 debug/qrc_RES_2.o
 debug/qrc_RES_3.o
 debug/qrc_Resources.o

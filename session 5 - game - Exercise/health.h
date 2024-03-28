@@ -2,6 +2,8 @@
 #define HEALTH_H
 
 #include <QGraphicsTextItem>
+#include <QMediaPLayer>
+#include <QAudioOutput>
 
 class Health: public QGraphicsTextItem{
 public:
@@ -12,6 +14,8 @@ public:
     void gameover();
 private:
     int health;
+    QMediaPlayer * womp_womp_sound;
+    QAudioOutput * womp_womp_output;
 };
 
 #endif // HEALTH_H
