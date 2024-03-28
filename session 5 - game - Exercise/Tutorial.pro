@@ -18,13 +18,19 @@ CONFIG += c++17
 SOURCES += \
     bullet.cpp \
     enemy.cpp \
+    game.cpp \
+    health.cpp \
     main.cpp \
-    player.cpp
+    player.cpp \
+    score.cpp
 
 HEADERS += \
     bullet.h \
     enemy.h \
-    player.h
+    game.h \
+    health.h \
+    player.h \
+    score.h
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
@@ -33,4 +39,5 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 
 RESOURCES += \
     RES_2.qrc \
+    RES_3.qrc \
     Resources.qrc

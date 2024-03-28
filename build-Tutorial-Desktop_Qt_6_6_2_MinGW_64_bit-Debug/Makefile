@@ -241,6 +241,7 @@ Makefile: ../session\ 5\ -\ game\ -\ Exercise/Tutorial.pro C:/Qt/6.6.2/mingw_64/
 		C:/Qt/6.6.2/mingw_64/lib/Qt6EntryPoint.prl \
 		C:/Qt/6.6.2/mingw_64/mkspecs/features/build_pass.prf \
 		../session\ 5\ -\ game\ -\ Exercise/RES_2.qrc \
+		../session\ 5\ -\ game\ -\ Exercise/RES_3.qrc \
 		../session\ 5\ -\ game\ -\ Exercise/Resources.qrc
 	$(QMAKE) -o Makefile "..\session 5 - game - Exercise\Tutorial.pro" -spec win32-g++ "CONFIG+=debug" "CONFIG+=qml_debug"
 C:/Qt/6.6.2/mingw_64/mkspecs/features/spec_pre.prf:
@@ -414,6 +415,7 @@ C:/Qt/6.6.2/mingw_64/lib/Qt6Core.prl:
 C:/Qt/6.6.2/mingw_64/lib/Qt6EntryPoint.prl:
 C:/Qt/6.6.2/mingw_64/mkspecs/features/build_pass.prf:
 ../session\ 5\ -\ game\ -\ Exercise/RES_2.qrc:
+../session\ 5\ -\ game\ -\ Exercise/RES_3.qrc:
 ../session\ 5\ -\ game\ -\ Exercise/Resources.qrc:
 qmake: FORCE
 	@$(QMAKE) -o Makefile "..\session 5 - game - Exercise\Tutorial.pro" -spec win32-g++ "CONFIG+=debug" "CONFIG+=qml_debug"

@@ -1,0 +1,5 @@
+<RCC>
+    <qresource prefix="/HURT_SOUND">
+        <file>ouch</file>
+    </qresource>
+</RCC>

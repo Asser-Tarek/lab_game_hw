@@ -7,7 +7,7 @@
 #include <QMediaPLayer>
 #include <QAudioOutput>
 //********* adding blast sound effect after key press event ********
-Player::Player() {
+Player::Player(QGraphicsItem *parent): QGraphicsPixmapItem(parent) {
     blast_audio = new QAudioOutput();
     blast_audio->setVolume(50);
     blast_sound = new QMediaPlayer();

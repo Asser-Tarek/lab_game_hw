@@ -1,4 +1,5 @@
 #include "bullet.h"
+#include "game.h"
 #include <QGraphicsScene>
 #include <QTimer>
 #include <QList>
@@ -8,7 +9,10 @@
 #include <QtMultimedia>
 #include <QMediaPLayer>
 #include <QAudioOutput>
-Bullet::Bullet():QObject(), QGraphicsPixmapItem() {
+
+extern Game * game;
+
+Bullet::Bullet(QGraphicsItem *parent):QObject(), QGraphicsPixmapItem(parent) {
 
     setPixmap(QPixmap(":/images/bullet_qt.png"));
     //****** Creating Chicken Death Sound Effect *********
@@ -35,6 +39,8 @@ void Bullet::move()
     {
         if(typeid(*(colliding_items[i])) == typeid(Enemy))
         {
+            // **** increase the score *****
+           game->score->increase();
             chicken_death_sound -> play();
             scene()->removeItem(colliding_items[i]);
             scene()->removeItem(this);
